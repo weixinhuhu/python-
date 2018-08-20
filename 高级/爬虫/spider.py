@@ -13,7 +13,6 @@ def getHtml(url):
     page.close()
     return html
 
-
 # compile the regular expressions and find
 # all stuff we need
 def getUrl(html):

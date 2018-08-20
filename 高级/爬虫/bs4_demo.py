@@ -23,5 +23,4 @@ for a in soup.find_all("a"):
     print(a.get("href"))
     print(a.get("class"))
     print(a.get("id"))
-
 print(soup.find_all(id="link1"))
