@@ -22,10 +22,12 @@ soup=BeautifulSoup(html,"html.parser")
 # print(soup.prettify())
 
 red=soup.findAll(class_='redColor sz12',limit=5)
-blue=soup.findAll(class_='blueColor sz12',limit=1)
 
-for redboll in red:
-    print(redboll)
+blue=soup.find(class_='blueColor sz12')
 
-for blueboll in blue:
-    print(blueboll.getText())
+l=[redboll.getText for redboll in red]
+
+l.append(blue.getText())
+
+print(l)
+
