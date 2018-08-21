@@ -30,10 +30,11 @@ l=[redboll.getText() for redboll in red]
 
 print("中奖号码： ")
 
-print('\033[1;31m')
-
-print(l)
+for s in l:
+    print('\033[1;31m'+s)
 
 print('\033[1;34m' + blue.getText() + '\033[0m')
+
+
 
 
