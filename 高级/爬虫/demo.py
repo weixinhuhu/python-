@@ -19,21 +19,13 @@ def getHtml(url):
 html = getHtml("http://zst.aicai.com/ssq/openInfo/")
 
 soup=BeautifulSoup(html,"html.parser")
-
 # print(soup.prettify())
 
 red=soup.findAll(class_='redColor sz12',limit=5)
+blue=soup.findAll(class_='blueColor sz12',limit=1)
 
-blue=soup.find(class_='blueColor sz12')
+for redboll in red:
+    print(redboll)
 
-l=[redboll.getText() for redboll in red]
-
-print("中奖号码： ")
-
-print('\033[1;31m')
-
-print(l)
-
-print('\033[1;34m' + blue.getText() + '\033[0m')
-
-
+for blueboll in blue:
+    print(blueboll.getText())
