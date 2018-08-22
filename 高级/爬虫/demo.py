@@ -22,13 +22,17 @@ soup=BeautifulSoup(html,"html.parser")
 
 # print(soup.prettify())
 
-red=soup.findAll(class_='redColor sz12',limit=5)
+StrDate=soup.find(onmouseover="this.style.background='#fff7d8'")
 
-blue=soup.find(class_='blueColor sz12')
+datestr=StrDate.findAll("td")[0]
 
-l=[redboll.getText() for redboll in red]
+red=StrDate.findAll("td")[2:8]
 
-print("中奖号码： ")
+blue=StrDate.findAll("td")[8]
+
+l= [redboll.getText() for redboll in red]
+
+print(datestr.getText()+" 期中奖号码： ")
 
 for s in l:
     print('\033[1;31m'+s)
